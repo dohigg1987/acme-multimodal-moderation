@@ -1,0 +1,22 @@
+Evaluating run_text_moderation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+                                                     Evaluation Summary: run_text_moderation                                                      
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Case ID           ┃ Inputs                                                ┃ Outputs                                               ┃ Assertions ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ professional_text │ [TextInput(text_file='/voc/work/code/project/starter/ │ rationale='The message is friendly and professional.  │ ✔✔✔✔       │
+│                   │ evals/test_data/professional_text.txt')]              │ It offers help, provides clear instructions, and uses │            │
+│                   │                                                       │ polite language. No PII was detected.'                │            │
+│                   │                                                       │ contains_pii=False is_unfriendly=False                │            │
+│                   │                                                       │ is_unprofessional=False                               │            │
+├───────────────────┼───────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼────────────┤
+│ text_with_pii     │ [TextInput(text_file='/voc/work/code/project/starter/ │ rationale='The message contains PII such as name,     │ ✔✔✔✔       │
+│                   │ evals/test_data/text_with_pii.txt')]                  │ address, email, phone number, and account number. It  │            │
+│                   │                                                       │ is friendly and professional.' contains_pii=True      │            │
+│                   │                                                       │ is_unfriendly=False is_unprofessional=False           │            │
+├───────────────────┼───────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼────────────┤
+│ unfriendly_text   │ [TextInput(text_file='/voc/work/code/project/starter/ │ rationale='The customer representative'               │ ✔✗✔✔       │
+│                   │ evals/test_data/unfriendly_text.txt')]                │ contains_pii=False is_unfriendly=True                 │            │
+│                   │                                                       │ is_unprofessional=True                                │            │
+├───────────────────┼───────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼────────────┤
+│ Averages          │                                                       │                                                       │ 91.7% ✔    │
+└───────────────────┴───────────────────────────────────────────────────────┴───────────────────────────────────────────────────────┴────────────┘

@@ -1,0 +1,24 @@
+Evaluating run_image_moderation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+                                                     Evaluation Summary: run_image_moderation                                                     
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Case ID            ┃ Inputs                                               ┃ Outputs                                               ┃ Assertions ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ professional_image │ [ImageInput(image_file='/voc/work/code/project/start │ rationale='The image is clear, professional, and      │ ✔✔✔✔       │
+│                    │ er/evals/test_data/professional_image.jpg')]         │ suitable for a customer service setting. It does not  │            │
+│                    │                                                      │ contain any disturbing content or                     │            │
+│                    │                                                      │ personally-identifiable information.'                 │            │
+│                    │                                                      │ contains_pii=False is_disturbing=False                │            │
+│                    │                                                      │ is_low_quality=False                                  │            │
+├────────────────────┼──────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼────────────┤
+│ image_with_person  │ [ImageInput(image_file='/voc/work/code/project/start │ rationale='The image contains a person, which is      │ ✔✔✔✔       │
+│                    │ er/evals/test_data/image_with_person.jpg')]          │ considered personally-identifiable information        │            │
+│                    │                                                      │ (PII).' contains_pii=True is_disturbing=False         │            │
+│                    │                                                      │ is_low_quality=False                                  │            │
+├────────────────────┼──────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼────────────┤
+│ low_quality_image  │ [ImageInput(image_file='/voc/work/code/project/start │ rationale='The image contains a hand, which is        │ ✔✔✔✔       │
+│                    │ er/evals/test_data/low_quality_image.jpg')]          │ considered PII. The image is also slightly blurry.'   │            │
+│                    │                                                      │ contains_pii=True is_disturbing=False                 │            │
+│                    │                                                      │ is_low_quality=True                                   │            │
+├────────────────────┼──────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼────────────┤
+│ Averages           │                                                      │                                                       │ 100.0% ✔   │
+└────────────────────┴──────────────────────────────────────────────────────┴───────────────────────────────────────────────────────┴────────────┘

@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0 -- /voc/work/code/project/starter/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /voc/work/code/project/starter
+configfile: pyproject.toml
+plugins: anyio-4.11.0, logfire-4.13.2, asyncio-1.2.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 45 items
+
+tests/test_audio_agent.py::test_moderate_audio_exists PASSED             [  2%]
+tests/test_audio_agent.py::test_moderate_audio_returns_audio_moderation_result PASSED [  4%]
+tests/test_audio_agent.py::test_moderate_audio_has_required_fields PASSED [  6%]
+tests/test_audio_agent.py::test_moderate_audio_rationale_not_empty PASSED [  8%]
+tests/test_audio_agent.py::test_moderate_audio_transcription_not_empty PASSED [ 11%]
+tests/test_gradio_app.py::test_create_chat_interface_returns_blocks PASSED [ 13%]
+tests/test_gradio_app.py::test_chatbot_uses_messages_type PASSED         [ 15%]
+tests/test_gradio_app.py::test_chatbot_has_copy_button PASSED            [ 17%]
+tests/test_gradio_app.py::test_demo_has_chatbot_component PASSED         [ 20%]
+tests/test_gradio_app.py::test_demo_has_multimodal_textbox PASSED        [ 22%]
+tests/test_gradio_app.py::test_multimodal_textbox_accepts_multiple_files PASSED [ 24%]
+tests/test_gradio_app.py::test_multimodal_textbox_accepts_correct_file_types PASSED [ 26%]
+tests/test_gradio_app.py::test_chat_with_gemini_calls_moderation PASSED  [ 28%]
+tests/test_gradio_app.py::test_chat_with_gemini_blocks_flagged_content PASSED [ 31%]
+tests/test_image_agent.py::test_moderate_image_exists PASSED             [ 33%]
+tests/test_image_agent.py::test_moderate_image_returns_image_moderation_result PASSED [ 35%]
+tests/test_image_agent.py::test_moderate_image_has_required_fields PASSED [ 37%]
+tests/test_image_agent.py::test_moderate_image_rationale_not_empty PASSED [ 40%]
+tests/test_moderation_result.py::TestModerationResult::test_has_rationale_field PASSED [ 42%]
+tests/test_moderation_result.py::TestModerationResult::test_rationale_is_required PASSED [ 44%]
+tests/test_moderation_result.py::TestModerationResult::test_is_pydantic_model PASSED [ 46%]
+tests/test_moderation_result.py::TestTextModerationResult::test_has_all_required_fields PASSED [ 48%]
+tests/test_moderation_result.py::TestTextModerationResult::test_field_types PASSED [ 51%]
+tests/test_moderation_result.py::TestTextModerationResult::test_inherits_from_moderation_result PASSED [ 53%]
+tests/test_moderation_result.py::TestTextModerationResult::test_all_fields_are_required PASSED [ 55%]
+tests/test_moderation_result.py::TestImageModerationResult::test_has_all_required_fields PASSED [ 57%]
+tests/test_moderation_result.py::TestImageModerationResult::test_field_types PASSED [ 60%]
+tests/test_moderation_result.py::TestImageModerationResult::test_inherits_from_moderation_result PASSED [ 62%]
+tests/test_moderation_result.py::TestImageModerationResult::test_all_fields_are_required PASSED [ 64%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_has_all_required_fields PASSED [ 66%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_field_types PASSED [ 68%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_inherits_from_moderation_result PASSED [ 71%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_all_fields_are_required PASSED [ 73%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_has_all_required_fields PASSED [ 75%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_field_types PASSED [ 77%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_inherits_from_moderation_result PASSED [ 80%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_all_fields_are_required PASSED [ 82%]
+tests/test_text_agent.py::test_moderate_text_exists PASSED               [ 84%]
+tests/test_text_agent.py::test_moderate_text_returns_text_moderation_result PASSED [ 86%]
+tests/test_text_agent.py::test_moderate_text_has_required_fields PASSED  [ 88%]
+tests/test_text_agent.py::test_moderate_text_rationale_not_empty PASSED  [ 91%]
+tests/test_video_agent.py::test_moderate_video_exists PASSED             [ 93%]
+tests/test_video_agent.py::test_moderate_video_returns_video_moderation_result PASSED [ 95%]
+tests/test_video_agent.py::test_moderate_video_has_required_fields PASSED [ 97%]
+tests/test_video_agent.py::test_moderate_video_rationale_not_empty PASSED [100%]
+
+============================= 45 passed in 34.91s ==============================
